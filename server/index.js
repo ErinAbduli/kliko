@@ -3,6 +3,7 @@ import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import users from "./routes/users.js";
+import products from "./routes/products.js";
 
 dotenv.config();
 
@@ -31,6 +32,7 @@ const connectDB = async () => {
 app.use(cors(corsOption));
 app.use(express.json());
 app.use("/api/users", users);
+app.use("/api/products", products);
 
 app.listen(3000, () => {
 	connectDB();
