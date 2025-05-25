@@ -1,9 +1,12 @@
 import React from "react";
+import logo from "../../assets/logo.png";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
 	return (
-		<div className="flex justify-between items-center py-6 px-12 bg-blue-300 text-white text-lg text-semibold">
-			<div>
+		<div className="flex justify-between items-center py-6 px-12 bg-blue-300 text-[#184571] text-lg font-semibold">
+			<div className="flex items-center gap-2">
+				<img className="w-7 h-7" src={logo} alt="" />
 				<h2>AlbaMed</h2>
 			</div>
 			<div>
@@ -11,19 +14,23 @@ const Navbar = () => {
 					<li>
 						<a href="/">Home</a>
 					</li>
-					<li className="ml-6">
+					<li className="ml-8">
 						<a href="/about">About</a>
 					</li>
-					<li className="ml-6">
+					<li className="ml-8">
 						<a href="/shop">Shop</a>
 					</li>
-					<li className="ml-6">
+					<li className="ml-8">
 						<a href="/contact">Contact</a>
 					</li>
 				</ul>
 			</div>
 			<div>
-				<h2>AlbaMed</h2>
+				<Link to="/login">
+					<button className="cursor-pointer bg-rose-200 px-6 py-2 rounded-xl">
+						Login
+					</button>
+				</Link>
 			</div>
 		</div>
 	);
